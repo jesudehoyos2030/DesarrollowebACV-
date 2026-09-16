@@ -1,0 +1,46 @@
+<aside class="sidebar">
+
+  <nav class="menu">
+
+    <p class="menu-title">MENÚ</p>
+
+    <a
+      routerLink="/app/home"
+      routerLinkActive="active"
+      class="menu-item"
+    >
+      <span class="menu-icon">🏠</span>
+      <span>Home</span>
+    </a>
+
+    <a
+      routerLink="/app/dashboard-admin"
+      routerLinkActive="active"
+      class="menu-item"
+    >
+      <span class="menu-icon">📊</span>
+      <span>Dashboard</span>
+    </a>
+
+    <a
+      routerLink="/app/usuarios"
+      routerLinkActive="active"
+      class="menu-item"
+    >
+      <span class="menu-icon">👥</span>
+      <span>Usuarios</span>
+    </a>
+
+    
+
+  </nav>
+
+  <button
+    type="button"
+    class="logout-button"
+    (click)="logout()"
+  >
+    Cerrar sesión
+  </button>
+
+</aside>

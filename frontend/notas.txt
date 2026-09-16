@@ -1,0 +1,9 @@
+# crear el pyecto en angular
+ng new login-class --routing --style=scss -skip-tests
+
+## crear componentes del proyecto en app
+ng generate component features\auth\pages\login --skip-tests
+ng generate component features/auth/pages/register --skip-tests
+ng generate component features/auth/pages/forgot-password --skip-tests
+ng generate component features/home/pages/home --skip-tests
+ng generate component shared/components/message-box --skip-tests

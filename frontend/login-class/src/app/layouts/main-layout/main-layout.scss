@@ -1,0 +1,30 @@
+$navy: #1e2761;
+$coral: #e8543f;
+$bg-light: #eef4ef;
+$bg-gray: #d9d9d9;
+$text-dark: #1a1a1a;
+
+* {
+  box-sizing: border-box;
+}
+
+.main-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background-color: $bg-light;
+}
+
+.layout-body {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  background-color: $bg-light;
+  overflow-y: auto;
+}

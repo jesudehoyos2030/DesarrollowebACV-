@@ -1,0 +1,87 @@
+<div class="login-page">
+  <div class="login-card">
+
+    <!-- Panel izquierdo -->
+    <div class="panel-left">
+      <div class="brand">
+        <!-- Para colocar el circulo rojo, se usa span para definir estilos o aplicar clases  -->
+        <span class="brand-dot"></span> 
+        <span class="brand-name">ACV Alerta 123</span>
+      </div>
+      <p class="eyebrow">DETECCIÓN TEMPRANA DE ACV</p>
+      <h1 class="headline">
+        Cada minuto <span class="highlight">cuenta</span>.<br />
+        Nosotros contamos contigo.
+      </h1>
+      <p class="description">
+        Responde un cuestionario de un minuto sobre los síntomas. Si
+        detectamos una emergencia, activamos la alerta al 123 y al CRUE por
+        ti.
+      </p>
+      <!-- La d contiene instrucciones matemáticas para dibujar la línea. -->
+      <svg
+        class="pulse-icon"
+        viewBox="20 0 150 70"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 40 H40 L50 10 L65 55 L75 30 L85 40 H110"
+          stroke="currentColor"
+          stroke-width="5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M110 40 C110 25 130 25 135 35 C140 25 160 25 160 40 C160 50 135 58 135 58 C135 58 110 50 110 40 Z"
+          stroke="currentColor"
+          stroke-width="5"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </div>
+
+
+    <!-- Panel derecho -->
+    <div class="panel-right">
+      <h2 class="title">Iniciar sesión</h2>
+      <p class="subtitle">Ingresa tu usuario y contraseña</p>
+    <!-- Aqui es donde miramos del ts el submit para mirar si corresponde con lo que establecimos (ngsubmit) -->
+      <form [formGroup]="form" (ngSubmit)="submit()" class="login-form">
+        <label class="field-label" for="user">Usuario:</label>
+        <input id="user" type="text" formControlName="user" class="field-input"
+        />
+        <label class="field-label" for="password">Contraseña:</label>
+        <div class="password-field">
+          <span class="icon-lock">🔒</span>
+          <input id="password" type="password" formControlName="password" class="field-input password-input"
+          />
+        </div>
+        <!-- Aqui solo colocamos que si el loginError es true, muestre eso -->
+        @if (loginError()) {
+          <p class="error-message">Usuario o contraseña incorrectos.</p>
+        }
+        <a class="forgot-link" (click)="goToForgotPassword()"
+          >Olvidé mi contraseña</a
+        >
+        <button type="submit" class="btn-primary">Ingresar</button>
+        <div class="divider">
+          <span></span>
+          <em>o</em>
+          <span></span>
+        </div>
+        <button type="button" class="btn-secondary" (click)="goToRegister()">Registrarme</button>
+      </form>
+      <p class="privacy-text">
+        Al continuar aceptas el uso de tus datos de salud únicamente para
+        activar la atención de emergencia.
+        <a>Ver política de privacidad</a>.
+      </p>
+    </div>
+  </div>
+
+  <div class="emergency-bar">
+    <span>¿Síntomas graves ahora mismo?</span>
+    <button type="button" class="btn-call">Llamar 123</button>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+$navy: #1e2761;
+$text-muted: #6b7280;
+
+.dashboard h2 {
+  margin: 0 0 0.5rem;
+  color: $navy;
+  font-size: 2rem;
+}
+
+.dashboard p {
+  color: $text-muted;
+}

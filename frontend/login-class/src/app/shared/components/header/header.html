@@ -1,0 +1,43 @@
+<header class="header">
+ 
+  <!-- IZQUIERDA -->
+  <div class="header-left">
+    <span class="brand-dot"></span>
+    <span class="brand-name">ACV Alerta 123</span>
+  </div>
+ 
+  <!-- CENTRO -->
+  <div class="header-center">
+    {{pageTitle()}}
+  </div>
+ 
+  <!-- DERECHA -->
+  <div class="header-right">
+    <button class="profile-button" type="button" (click)="toggleProfileMenu()">
+      <span class="profile-icon">👤</span>
+      <span>Mi perfil</span>
+    </button>
+    @if (showProfileMenu){
+      <div type = "button" class = "profile-menu">
+        <button type="button" class="btn-profile-menu" (click)="openProfileModal()">Mi perfil</button>
+        <button class="btn-profile-menu" (click)="logout()">Cerrar Sesión</button>
+      </div>
+      <!-- <div class = "sesion-menu" type = "button">
+        <button class="btn-profile-menu" (click)="logout()">Cerrar Sesión</button>
+      </div> -->
+    }
+  </div>
+</header> 
+
+@if (showProfileModal){
+  <div class="modal-overlay">
+    <div class="profile-modal">
+      <h2>Mi perfil</h2>
+      <p>Nombre: Jesus David </p>
+      <p>Apellido: De Hoyos </p>
+      <p>ID: 1234567 </p>
+      <button type="button" class="modal-close" (click)="closeProfileModal()">Cerrar</button>
+    </div>
+
+  </div>
+}

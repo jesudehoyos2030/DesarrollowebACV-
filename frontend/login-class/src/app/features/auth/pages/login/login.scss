@@ -1,0 +1,277 @@
+// Creando variables para definir los colores que mas se usan
+$navy: #1e2761;
+$coral: #e8543f;
+$bg-light: #eef4ef;
+$bg-gray: #d9d9d9;
+$text-dark: #1a1a1a;
+$text-muted: #6b7280;
+
+// Todo el HTML
+* {
+  box-sizing: border-box; 
+}
+
+// Es el contenedor principal de la página de Login, aqui esta el panel izquierdo, el derecho y lo de abajo
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+// Aqui si estan solo kos dos paneles
+.login-card {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+// ---------- Panel izquierdo ----------
+.panel-left {
+  flex: 1 1 420px;
+  background-color: $navy;
+  color: #fff;
+  padding: 3rem 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+// Esta es para lo de mas arriba en lo azul
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.brand-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: $coral;
+  display: inline-block;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  opacity: 0.85;
+  margin: 1.5rem 0 0;
+}
+
+.headline {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0.5rem 0;
+
+  .highlight {
+    color: $coral;
+  }
+}
+
+.description {
+  color: #c7cbe0;
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 32ch;
+}
+
+.pulse-icon {
+  color: $coral;
+  width: 220px;
+  height: auto;
+  margin-top: auto;
+}
+
+// ---------- Panel derecho ----------
+.panel-right {
+  flex: 1 1 420px;
+  background-color: $bg-light;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin: 0 0 0.4rem;
+  color: $text-dark;
+}
+
+.subtitle {
+  color: $text-muted;
+  margin: 0 0 1.75rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 420px;
+}
+
+.field-label {
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.field-input {
+  padding: 0.85rem 1rem;
+  border: 1px solid $text-dark;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+  outline: none;
+
+  &:focus {
+    border-color: $navy;
+  }
+}
+
+.password-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.4rem;
+
+  .password-input {
+    flex: 1;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    margin-bottom: 0;
+  }
+
+  .icon-lock {
+    position: absolute;
+    left: 0.85rem;
+  }
+
+
+}
+
+.error-message {
+  color: $coral;
+  font-size: 0.85rem;
+  margin: 0.2rem 0 0.5rem;
+}
+
+.forgot-link {
+  align-self: flex-end;
+  font-size: 0.85rem;
+  color: $text-muted;
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.btn-primary {
+  background-color: $navy;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 0.9rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+
+  span {
+    flex: 1;
+    height: 1px;
+    background-color: #b8bcc8;
+  }
+
+  em {
+    font-style: normal;
+    color: $text-muted;
+    border: 1px solid #b8bcc8;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+  }
+}
+
+.btn-secondary {
+  background-color: #e2e5e9;
+  color: $text-dark;
+  border: none;
+  border-radius: 24px;
+  padding: 0.9rem;
+  font-size: 1rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #d5d8dd;
+  }
+}
+
+.privacy-text {
+  font-size: 0.8rem;
+  color: $text-muted;
+  margin-top: 1.5rem;
+  max-width: 420px;
+
+  a {
+    color: $text-dark;
+    text-decoration: underline;
+  }
+}
+
+// ---------- Barra inferior ----------
+.emergency-bar {
+  background-color: $bg-gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  font-weight: 500;
+}
+
+.btn-call {
+  background-color: $coral;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 0.7rem 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+// ---------- Responsive ----------
+// Sirve para que tu página se adapte cuando la pantalla es pequeña
+@media (max-width: 768px) {
+  .headline {
+    font-size: 1.8rem;
+  }
+  .panel-left,
+  .panel-right {
+    padding: 2rem 1.5rem;
+  }
+}

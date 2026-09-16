@@ -1,0 +1,79 @@
+<div class="login-page">
+  <div class="login-card">
+    <!-- Panel izquierdo -->
+    <div class="panel-left">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <span class="brand-name">ACV Alerta 123</span>
+      </div>
+      <p class="eyebrow">DETECCIÓN TEMPRANA DE ACV</p>
+      <h1 class="headline">
+        Crea tu <span class="highlight">cuenta</span>.<br />
+        Queremos cuidar de ti y tu familia
+      </h1>
+      <p class="description">
+        Registra tus datos y los de un contacto de emergencia para activar
+        la atención en segundos si la necesitas.
+      </p>
+    </div>
+
+    <!-- Panel derecho -->
+    <div class="panel-right">
+      <h2 class="title">Registrarme</h2>
+      <p class="subtitle">Solo toma un minuto</p>
+
+      <form [formGroup]="form" class="register-form">
+        <div class="form-row">
+          <div class="form-field">
+            <label class="field-label" for="fullName">Nombre completo:</label>
+            <input id="fullName" type="text" formControlName="fullName" class="field-input" />
+          </div>
+          <div class="form-field">
+            <label class="field-label" for="phone">Teléfono:</label>
+            <input id="phone" type="tel" formControlName="phone" class="field-input" />
+          </div>
+        </div>
+
+        <label class="field-label" for="email">Correo electrónico:</label>
+        <input id="email" type="email" formControlName="email" class="field-input" />
+
+        <div class="form-row">
+          <div class="form-field">
+            <label class="field-label" for="password">Contraseña:</label>
+            <input id="password" type="password" formControlName="password" class="field-input" />
+          </div>
+          <div class="form-field">
+            <label class="field-label" for="confirmPassword">Confirmar contraseña:</label>
+            <input id="confirmPassword" type="password" formControlName="confirmPassword" class="field-input" />
+          </div>
+        </div>
+
+        <!-- Aqui miramos si la contraseña y el confirmar son iguales -->
+        @if (form.errors?.['passwordsMismatch'] && form.get('confirmPassword')?.touched) {
+          <p class="error-message">Las contraseñas no coinciden.</p>
+        }
+
+        <label class="field-label" for="emergencyContact">Contacto de emergencia (opcional):</label>
+        <input id="emergencyContact" type="text" formControlName="emergencyContact" class="field-input" />
+
+        <button type="submit" class="btn-primary">Crear cuenta</button>
+      </form>
+
+      <p class="privacy-text">
+        Al continuar aceptas el uso de tus datos de salud únicamente para
+        activar la atención de emergencia.
+        <a href="javascript:void(0)">Ver política de privacidad</a>.
+      </p>
+
+      <p class="login-link">
+        Ya tengo cuenta.
+        <a href="javascript:void(0)" (click)="goToLogin()">Iniciar sesión</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="emergency-bar">
+    <span>¿Síntomas graves ahora mismo?</span>
+    <button type="button" class="btn-call">Llamar 123</button>
+  </div>
+</div>

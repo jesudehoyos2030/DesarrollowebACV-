@@ -1,0 +1,20 @@
+# Entorno virtual de Python
+.venv/
+venv/
+env/
+
+# Caché de Python
+__pycache__/
+*.py[cod]
+
+# Variables de entorno
+.env
+
+# Visual Studio Code
+.vscode/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+frontend_backup/
